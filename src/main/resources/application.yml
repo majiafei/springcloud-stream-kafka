@@ -1,0 +1,16 @@
+server:
+  port: 8093
+spring:
+  kafka:
+    bootstrap-servers: 192.168.221.131:9092
+    consumer:
+      group-id: hyson-02
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: ${kafka.topic}
+        input:
+          destination: ${kafka.topic}
+kafka:
+  topic: hyson-01
